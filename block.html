@@ -1,14 +1,145 @@
-<!DOCTYPE html><html lang="ja"><head><meta name=”viewport” content=”width=device-width, initial-scale=1.0″><meta charset="UTF-8"><title>安全のため表示を停止しました</title>
-<style>body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;background-color:#f5f7fa;margin:0;padding:0}.container{max-width:720px;margin:40px auto;background:#fff;padding:40px 30px;border-radius:12px;box-shadow:0 0 12px rgba(0,0,0,.08);text-align:center}.icon{font-size:52px}h1{color:#1976d2;font-size:38px;margin-bottom:20px}p{font-size:24px;line-height:1.8;margin:18px 0}.safe{background:#e7f5ff;padding:22px;border-radius:10px;font-size:24px;margin-top:20px}button{font-size:22px;padding:16px 26px;border-radius:10px;border:none;margin:15px;cursor:pointer}.close{background-color:#777;color:#fff}</style>
-</head><body><div class="container"><div class="icon">🛡️</div>
-<h1>安全のため<br>ページを止めました</h1>
-<p>
-このサイトは安全ではない可能性があったため、<br>
-表示を止めました。
-</p>
-<div class="safe">
-現在、あなたの情報は送信されていません。<br>
-そのまま閉じて問題ありません。
-</div><div>
-<button class="close" onclick="window.close()">閉じる</button>
-</div></div></body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>安全のため表示を停止しました</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 15px;
+}
+
+/* 全体 */
+.container {
+    max-width: 480px;
+    margin: auto;
+    background: white;
+    padding: 28px 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* アイコン */
+.icon {
+    font-size: 56px;
+    margin-bottom: 10px;
+}
+
+/* タイトル */
+h1 {
+    color: #1976d2;
+    font-size: 30px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+/* 説明文 */
+p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+/* ボタン */
+button {
+    width: 100%;
+    font-size: 20px;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+/* 詳細 */
+.details-button {
+    background: #eeeeee;
+    font-size: 18px;
+}
+
+/* 詳細本文 */
+.details {
+    display: none;
+    text-align: left;
+    margin-top: 20px;
+    background: #fafafa;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* 質問 */
+.question {
+    font-weight: bold;
+    margin-top: 12px;
+    font-size: 19px;
+}
+
+/* 回答 */
+.answer {
+    margin-left: 6px;
+}
+</style>
+<script>
+function toggleDetails() {
+    var x = document.getElementById("details");
+
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+    }
+}
+</script>
+</head>
+<body>
+<div class="container">
+<div class="icon">🛡️</div>
+
+<h1>
+安全のため<br>
+ページを止めました
+</h1>
+
+<button class="details-button" onclick="toggleDetails()">
+どういうこと？（ここを押して見る）
+</button>
+
+<div id="details" class="details">
+
+<div class="question">
+これはなに？
+</div>
+
+<div class="answer">
+このページは詐欺の可能性があったのでブロックしました。
+</div>
+
+<div class="question">
+詐欺にあったの？
+</div>
+
+<div class="answer">
+詐欺にあう前に止めました。
+</div>
+
+<div class="question">
+どうすればいい？
+</div>
+
+<div class="answer">
+戻るだけで大丈夫です。
+</div>
+</div>
+</div>
+</body>
+</html>
